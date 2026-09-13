@@ -1,0 +1,888 @@
+
+/* ========================================
+   ABDULLAH TRAVELS
+   PACKAGES PAGE
+======================================== */
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(15, 23, 42, 0.92);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+
+.site-header.scrolled {
+    background: rgba(2, 8, 23, 0.98);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.navbar {
+    max-width: 1200px;
+
+    margin: auto;
+
+    min-height: 75px;
+
+    padding: 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+
+.logo span {
+    color: #f59e0b;
+}
+
+
+/* NAVIGATION */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+    color: #e2e8f0;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f59e0b;
+}
+
+
+/* MOBILE BUTTON */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.packages-hero {
+    min-height: 65vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-image:
+        url("../images/hero/travel-fallback.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.packages-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(2, 8, 23, 0.8),
+            rgba(2, 8, 23, 0.55)
+        );
+}
+
+
+.packages-hero-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 800px;
+
+    padding: 120px 25px 70px;
+
+    color: white;
+}
+
+
+.section-subtitle {
+    color: #f59e0b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.packages-hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+
+.packages-hero h1 span {
+    color: #f59e0b;
+}
+
+
+.packages-hero p:last-child {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #e2e8f0;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.packages-intro {
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 90px 30px 50px;
+
+    text-align: center;
+}
+
+
+.packages-intro h2 {
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+
+.packages-intro h2 span {
+    color: #f59e0b;
+}
+
+
+.packages-intro > p:last-child {
+    color: #64748b;
+
+    font-size: 17px;
+}
+
+
+/* ========================================
+   PACKAGES
+======================================== */
+
+.packages-section {
+    padding: 30px 30px 100px;
+}
+
+
+.packages-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* ========================================
+   PACKAGE CARD
+======================================== */
+
+.package-card {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.package-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.14);
+}
+
+
+/* IMAGE */
+
+.package-image {
+    height: 240px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.package-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.package-card:hover .package-image img {
+    transform: scale(1.08);
+}
+
+
+/* BADGE */
+
+.package-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 6px 12px;
+
+    background: #f59e0b;
+
+    color: #0f172a;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+/* CONTENT */
+
+.package-content {
+    padding: 25px;
+}
+
+
+.package-location {
+    color: #f59e0b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.package-content h3 {
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+
+.package-content > p {
+    color: #64748b;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   PACKAGE DETAILS
+======================================== */
+
+.package-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 15px 0;
+
+    border-top: 1px solid #e2e8f0;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+
+/* FEATURES */
+
+.package-features {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 18px 0;
+}
+
+
+.package-features span {
+    padding: 5px 9px;
+
+    background: #fff7ed;
+
+    color: #c2410c;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   PRICE + BUTTON
+======================================== */
+
+.package-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 10px;
+}
+
+
+.package-price {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.package-price small {
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+.package-price strong {
+    color: #0f172a;
+
+    font-size: 28px;
+}
+
+
+.package-btn {
+    padding: 10px 16px;
+
+    background: #f59e0b;
+
+    color: #0f172a;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.package-btn:hover {
+    background: #d97706;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   CUSTOM PACKAGE CTA
+======================================== */
+
+.custom-package {
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 30px;
+
+    background-image:
+        url("../images/hero/cta-travel.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.custom-package::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(2, 8, 23, 0.75);
+}
+
+
+.custom-package-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 700px;
+
+    color: white;
+}
+
+
+.custom-package h2 {
+    font-size: 45px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+.custom-package h2 span {
+    color: #f59e0b;
+}
+
+
+.custom-package-content > p:not(.section-subtitle) {
+    color: #cbd5e1;
+
+    margin-bottom: 25px;
+}
+
+
+.custom-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #f59e0b;
+
+    color: #0f172a;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.custom-btn:hover {
+    background: #d97706;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.site-footer {
+    background: #020617;
+
+    color: #cbd5e1;
+
+    padding-top: 60px;
+}
+
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 30px 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+
+.footer-logo {
+    display: inline-block;
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-logo span {
+    color: #f59e0b;
+}
+
+
+.footer-column h3 {
+    color: white;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-column p {
+    margin-bottom: 10px;
+
+    color: #94a3b8;
+}
+
+
+.footer-column a:not(.footer-logo) {
+    display: block;
+
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    margin-bottom: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-column a:hover {
+    color: #f59e0b;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+
+    text-align: center;
+
+    padding: 20px 30px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .packages-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 70px;
+
+        padding: 0 20px;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        background: #0f172a;
+    }
+
+
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    .packages-hero {
+        min-height: 60vh;
+    }
+
+
+    .packages-hero-content {
+        padding-top: 110px;
+    }
+
+
+    .packages-hero h1 {
+        font-size: 42px;
+    }
+
+
+    .packages-intro {
+        padding: 70px 20px 40px;
+    }
+
+
+    .packages-intro h2 {
+        font-size: 34px;
+    }
+
+
+    .packages-section {
+        padding: 20px 20px 70px;
+    }
+
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .package-image {
+        height: 250px;
+    }
+
+
+    .custom-package {
+        min-height: 400px;
+
+        padding: 70px 20px;
+    }
+
+
+    .custom-package h2 {
+        font-size: 36px;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 0 20px 40px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .packages-hero h1 {
+        font-size: 35px;
+    }
+
+
+    .packages-hero p:last-child {
+        font-size: 16px;
+    }
+
+
+    .package-image {
+        height: 220px;
+    }
+
+
+    .package-content {
+        padding: 20px;
+    }
+
+
+    .package-content h3 {
+        font-size: 21px;
+    }
+
+
+    .package-bottom {
+        align-items: flex-end;
+    }
+
+
+    .package-price strong {
+        font-size: 24px;
+    }
+
+
+    .package-btn {
+        padding: 9px 13px;
+    }
+
+
+    .custom-package h2 {
+        font-size: 30px;
+    }
+
+}
+
