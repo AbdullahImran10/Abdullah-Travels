@@ -203,3 +203,260 @@ if (
     });
 
 }
+
+/* ========================================
+   6. CONTACT FORM VALIDATION
+======================================== */
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const subjectInput = document.getElementById("subject");
+    const messageInput = document.getElementById("message");
+
+    const successMessage =
+        document.getElementById("successMessage");
+
+
+    contactForm.addEventListener("submit", function (event) {
+
+        // Stop the form from actually submitting
+        event.preventDefault();
+
+
+        // Clear previous errors
+        clearErrors();
+
+
+        let isValid = true;
+
+
+        /* ================================
+           NAME VALIDATION
+        ================================= */
+
+        if (nameInput.value.trim() === "") {
+
+            showError(
+                nameInput,
+                "Please enter your name."
+            );
+
+            isValid = false;
+
+        } else if (nameInput.value.trim().length < 3) {
+
+            showError(
+                nameInput,
+                "Name must be at least 3 characters."
+            );
+
+            isValid = false;
+
+        } else {
+
+            showSuccess(nameInput);
+
+        }
+
+
+        /* ================================
+           EMAIL VALIDATION
+        ================================= */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailInput.value.trim() === "") {
+
+            showError(
+                emailInput,
+                "Please enter your email."
+            );
+
+            isValid = false;
+
+        } else if (!emailPattern.test(emailInput.value.trim())) {
+
+            showError(
+                emailInput,
+                "Please enter a valid email address."
+            );
+
+            isValid = false;
+
+        } else {
+
+            showSuccess(emailInput);
+
+        }
+
+
+        /* ================================
+           PHONE VALIDATION
+        ================================= */
+
+        if (phoneInput.value.trim() === "") {
+
+            showError(
+                phoneInput,
+                "Please enter your phone number."
+            );
+
+            isValid = false;
+
+        } else if (phoneInput.value.trim().length < 7) {
+
+            showError(
+                phoneInput,
+                "Please enter a valid phone number."
+            );
+
+            isValid = false;
+
+        } else {
+
+            showSuccess(phoneInput);
+
+        }
+
+
+        /* ================================
+           SUBJECT VALIDATION
+        ================================= */
+
+        if (subjectInput.value.trim() === "") {
+
+            showError(
+                subjectInput,
+                "Please enter a subject."
+            );
+
+            isValid = false;
+
+        } else {
+
+            showSuccess(subjectInput);
+
+        }
+
+
+        /* ================================
+           MESSAGE VALIDATION
+        ================================= */
+
+        if (messageInput.value.trim() === "") {
+
+            showError(
+                messageInput,
+                "Please enter your message."
+            );
+
+            isValid = false;
+
+        } else if (messageInput.value.trim().length < 10) {
+
+            showError(
+                messageInput,
+                "Message must be at least 10 characters."
+            );
+
+            isValid = false;
+
+        } else {
+
+            showSuccess(messageInput);
+
+        }
+
+
+        /* ================================
+           FINAL RESULT
+        ================================= */
+
+        if (isValid) {
+
+            successMessage.textContent =
+                "Your message has been submitted successfully!";
+
+            contactForm.reset();
+
+        } else {
+
+            successMessage.textContent = "";
+
+        }
+
+    });
+
+
+    /* ================================
+       SHOW ERROR
+    ================================= */
+
+    function showError(input, message) {
+
+        const formGroup =
+            input.closest(".form-group");
+
+        const errorMessage =
+            formGroup.querySelector(".error-message");
+
+        formGroup.classList.add("error");
+
+        formGroup.classList.remove("success");
+
+        errorMessage.textContent = message;
+    }
+
+
+    /* ================================
+       SHOW SUCCESS
+    ================================= */
+
+    function showSuccess(input) {
+
+        const formGroup =
+            input.closest(".form-group");
+
+        const errorMessage =
+            formGroup.querySelector(".error-message");
+
+        formGroup.classList.remove("error");
+
+        formGroup.classList.add("success");
+
+        errorMessage.textContent = "";
+    }
+
+
+    /* ================================
+       CLEAR ERRORS
+    ================================= */
+
+    function clearErrors() {
+
+        const formGroups =
+            contactForm.querySelectorAll(".form-group");
+
+        formGroups.forEach(function (group) {
+
+            group.classList.remove("error");
+            group.classList.remove("success");
+
+            const errorMessage =
+                group.querySelector(".error-message");
+
+            if (errorMessage) {
+                errorMessage.textContent = "";
+            }
+
+        });
+
+    }
+
+}

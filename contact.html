@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Abdullah Travels</title>
+
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                Abdullah Travels
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="packages.html">Packages</a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================
+         CONTACT HERO
+    ================================= -->
+
+    <section class="contact-hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">GET IN TOUCH</p>
+
+            <h1>
+                Let's Plan Your Journey.
+            </h1>
+
+            <p>
+                Have a question or ready to start your next adventure?
+                Get in touch with Abdullah Travels today.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CONTACT SECTION
+    ================================= -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <p class="section-label">CONTACT US</p>
+
+                <h2>
+                    We're Here to Help
+                </h2>
+
+                <p class="contact-description">
+                    Whether you need help choosing a package,
+                    planning your trip, or simply have a question,
+                    our team is ready to assist you.
+                </p>
+
+
+                <div class="contact-details">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@abdullahtravels.com</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+92 300 1234567</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+                            <h3>Location</h3>
+                            <p>Pakistan</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ⏰
+                        </div>
+
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Saturday, 9 AM - 6 PM</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form-container">
+
+                <form id="contactForm" novalidate>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name">
+
+                            <small
+                                class="error-message"
+                                id="nameError">
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email">
+
+                            <small
+                                class="error-message"
+                                id="emailError">
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number">
+
+                            <small
+                                class="error-message"
+                                id="phoneError">
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="What can we help with?">
+
+                            <small
+                                class="error-message"
+                                id="subjectError">
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tell us about your travel plans..."></textarea>
+
+                        <small
+                            class="error-message"
+                            id="messageError">
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        Send Message
+
+                    </button>
+
+
+                    <p
+                        class="success-message"
+                        id="successMessage">
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CTA
+    ================================= -->
+
+    <section class="contact-cta">
+
+        <div class="cta-content">
+
+            <p class="section-label">
+                YOUR ADVENTURE AWAITS
+            </p>
+
+            <h2>
+                Explore More. Travel Better.
+            </h2>
+
+            <p>
+                Let Abdullah Travels turn your travel plans
+                into unforgettable memories.
+            </p>
+
+            <a href="packages.html" class="cta-button">
+                View Packages
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>Abdullah Travels</h3>
+
+                <p>
+                    Explore More. Travel Better.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Quick Links</h4>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="packages.html">Packages</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h4>Contact</h4>
+
+                <p>Email: info@abdullahtravels.com</p>
+                <p>Phone: +92 300 1234567</p>
+                <p>Pakistan</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Abdullah Travels. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>
